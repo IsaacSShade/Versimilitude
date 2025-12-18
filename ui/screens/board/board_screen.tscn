@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://du31i0r40ptf6"]
+
+[ext_resource type="Script" uid="uid://dxei7e8kwmorw" path="res://ui/screens/board/board_screen.gd" id="1_kes7c"]
+[ext_resource type="PackedScene" uid="uid://cl755sl3cs1sd" path="res://ui/screens/outcome/outcome_screen.tscn" id="2_chqp5"]
+
+[node name="BoardScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_kes7c")
+next_screen = ExtResource("2_chqp5")
+
+[node name="ContinueButton" type="Button" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Continue"
+
+[connection signal="pressed" from="ContinueButton" to="." method="_on_continue_pressed"]

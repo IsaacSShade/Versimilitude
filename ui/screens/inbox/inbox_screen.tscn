@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpkqseaeli6o7"]
+
+[ext_resource type="Script" uid="uid://u4xwd17j87d1" path="res://ui/screens/inbox/inbox_screen.gd" id="1_bwdvj"]
+[ext_resource type="PackedScene" uid="uid://du31i0r40ptf6" path="res://ui/screens/board/board_screen.tscn" id="2_k18ic"]
+
+[node name="InboxScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_bwdvj")
+next_screen = ExtResource("2_k18ic")
+
+[node name="ContinueButton" type="Button" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Continue"
+
+[connection signal="pressed" from="ContinueButton" to="." method="_on_continue_pressed"]

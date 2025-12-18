@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cl755sl3cs1sd"]
+
+[ext_resource type="Script" uid="uid://dr5xxqjforf2a" path="res://ui/screens/outcome/outcome_screen.gd" id="1_bqqs2"]
+
+[node name="OutcomeScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_bqqs2")

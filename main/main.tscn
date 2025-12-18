@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmvtb5fkjcqx6"]
+
+[ext_resource type="Script" uid="uid://c3dqvu54ow024" path="res://main/screen_manager.gd" id="1_pjrb6"]
+[ext_resource type="PackedScene" uid="uid://dpkqseaeli6o7" path="res://ui/screens/inbox/inbox_screen.tscn" id="2_xwkvk"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_pjrb6")
+start_screen = ExtResource("2_xwkvk")
