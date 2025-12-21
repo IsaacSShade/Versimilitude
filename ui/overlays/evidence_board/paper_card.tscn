@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://yst4wavdlshi"]
+
+[ext_resource type="Script" uid="uid://nje2r1lbrj62" path="res://ui/overlays/evidence_board/paper_card.gd" id="1_jnqwb"]
+
+[node name="PaperCard" type="Panel"]
+offset_right = 200.0
+offset_bottom = 250.0
+script = ExtResource("1_jnqwb")
+
+[node name="PinButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="Padding" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 12
+
+[node name="Content" type="VBoxContainer" parent="Padding"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Padding/Content"]
+layout_mode = 2
+autowrap_mode = 3
+
+[node name="Body" type="RichTextLabel" parent="Padding/Content"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2

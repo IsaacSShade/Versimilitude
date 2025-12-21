@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbhrikn5gobjd"]
+
+[ext_resource type="Script" uid="uid://b2nlkaehvoh47" path="res://ui/overlays/evidence_board/evidence_board_overlay.gd" id="1_vqy6b"]
+[ext_resource type="PackedScene" uid="uid://yst4wavdlshi" path="res://ui/overlays/evidence_board/paper_card.tscn" id="2_e8ddg"]
+[ext_resource type="PackedScene" uid="uid://dwtjib68pnwe4" path="res://ui/overlays/evidence_board/edge_line.tscn" id="3_ahysw"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_qxogj"]
+specular_color = Color(0.8972488, 0.7030767, 0.524571, 1)
+
+[node name="EvidenceBoardOverlay" type="CanvasLayer"]
+layer = 10
+script = ExtResource("1_vqy6b")
+paper_card_scene = ExtResource("2_e8ddg")
+edge_line_scene = ExtResource("3_ahysw")
+
+[node name="BoardRoot" type="Control" parent="."]
+custom_minimum_size = Vector2(500, 600)
+layout_mode = 3
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 0.95
+anchor_bottom = 0.95
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BoardBackground" type="NinePatchRect" parent="BoardRoot"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_qxogj")
+
+[node name="EdgesLayer" type="Node2D" parent="BoardRoot/BoardBackground"]
+
+[node name="CardsLayer" type="Control" parent="BoardRoot/BoardBackground"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TopBar" type="HBoxContainer" parent="BoardRoot/BoardBackground"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2

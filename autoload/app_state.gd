@@ -1,9 +1,17 @@
 extends Node
-class_name AppState
 
 var pinned_evidence: Array[Dictionary] = []
-var edges: Array[Dictionary] = []
-var _edge_index: Dictionary = {} # key -> truee
+var instance_edges: Array[Dictionary] = []
+var _instance_edge_index: Dictionary = {}
+
+func _ready() -> void:
+	# Optional: you can choose case per "day" here.
+	start_day("case_001")
+
+func start_day(case_id: String) -> void:
+	reset_day()
+	# EvidenceDb is a separate autoload singleton.
+	EvidenceDb.load_case(case_id)
 
 func _edge_key(a_id: String, b_id: String, edge_type: String) -> String:
 	# UNDIRECTED uniqueness: A-B equals B-A
@@ -20,14 +28,26 @@ func pin_evidence(e: Dictionary) -> void:
 		return
 	pinned_evidence.append(e)
 
-func add_edge(a_id: String, b_id: String, edge_type: String) -> bool:
-	var key := _edge_key(a_id, b_id, edge_type)
-	if _edge_index.has(key):
-		return false # already exists
-	_edge_index[key] = true
-	edges.append({"a": a_id, "b": b_id, "type": edge_type})
+func add_instance_edge(a_inst: int, b_inst: int, edge_type: String) -> bool:
+	if a_inst == b_inst:
+		return false
+
+	var lo: int = a_inst if a_inst < b_inst else b_inst
+	var hi: int = b_inst if a_inst < b_inst else a_inst
+	var key := "%d|%d" % [lo, hi] # unique per pair (undirected)
+
+	if _instance_edge_index.has(key):
+		return false
+
+	_instance_edge_index[key] = true
+	instance_edges.append({
+		"a": lo,
+		"b": hi,
+		"type": edge_type
+	})
 	return true
 
 func reset_day() -> void:
 	pinned_evidence.clear()
-	edges.clear()
+	instance_edges.clear()
+	_instance_edge_index.clear()

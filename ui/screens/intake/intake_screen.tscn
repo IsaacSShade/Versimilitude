@@ -1,0 +1,58 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpkqseaeli6o7"]
+
+[ext_resource type="Script" uid="uid://u4xwd17j87d1" path="res://ui/screens/intake/intake_screen.gd" id="1_bwdvj"]
+[ext_resource type="PackedScene" uid="uid://cl755sl3cs1sd" path="res://ui/screens/outcome/outcome_screen.tscn" id="2_xtly8"]
+
+[node name="InboxScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bwdvj")
+next_screen = ExtResource("2_xtly8")
+
+[node name="ContinueButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -39.5
+offset_right = 39.5
+offset_bottom = 31.0
+grow_horizontal = 2
+text = "Continue"
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="EvidenceList" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="ev_001" type="Button" parent="CenterContainer/EvidenceList"]
+layout_mode = 2
+
+[node name="ev_002" type="Button" parent="CenterContainer/EvidenceList"]
+layout_mode = 2
+
+[node name="ev_003" type="Button" parent="CenterContainer/EvidenceList"]
+layout_mode = 2
+
+[node name="ev_004" type="Button" parent="CenterContainer/EvidenceList"]
+layout_mode = 2
+
+[node name="ev_005" type="Button" parent="CenterContainer/EvidenceList"]
+layout_mode = 2
+
+[node name="ev_006" type="Button" parent="CenterContainer/EvidenceList"]
+layout_mode = 2
+
+[connection signal="pressed" from="ContinueButton" to="." method="_on_continue_pressed"]

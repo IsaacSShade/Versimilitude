@@ -1,0 +1,38 @@
+[
+  {
+	"id": "ev_001",
+	"title": "Security Badge Log",
+	"body": "Badge swipes show entry at 9:12 PM and exit at 9:47 PM.",
+	"source": "INTAKE"
+  },
+  {
+	"id": "ev_002",
+	"title": "Incident Report Draft",
+	"body": "A draft report mentions 'missing inventory' and an 'unsecured door.'",
+	"source": "INTAKE"
+  },
+  {
+	"id": "ev_003",
+	"title": "Email Thread: Procurement",
+	"body": "A chain about expedited orders and a 'do not ask questions' note.",
+	"source": "INTAKE"
+  },
+  {
+	"id": "ev_004",
+	"title": "CCTV Still Frame",
+	"body": "Blurry still shows a silhouette near storage at ~9:30 PM.",
+	"source": "INTAKE"
+  },
+  {
+	"id": "ev_005",
+	"title": "Interview: 'I was covering for someone'",
+	"body": "Subject claims they stayed late to 'cover'—won't say for who.",
+	"source": "INTERVIEW"
+  },
+  {
+	"id": "ev_006",
+	"title": "Interview: 'Policy says keep the door propped'",
+	"body": "Subject insists propping the door is 'standard practice.'",
+	"source": "INTERVIEW"
+  }
+]

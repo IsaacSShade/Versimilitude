@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwtjib68pnwe4"]
+
+[ext_resource type="Script" uid="uid://bkce78k0u4uuh" path="res://ui/overlays/evidence_board/edge_line.gd" id="1_o2nyi"]
+
+[node name="EdgeLine" type="Node2D"]
+script = ExtResource("1_o2nyi")
+
+[node name="Line" type="Line2D" parent="."]
+default_color = Color(0.72701794, 0, 0.16444063, 1)
+
+[node name="HitArea" type="Area2D" parent="."]
