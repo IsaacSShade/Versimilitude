@@ -2,6 +2,7 @@
 A story-driven corporate-noir paperwork game set on a company-owned O’Neill Cylinder, where **there is no real mystery**—but you get promoted (up to CEO) for **manufacturing one** that the company finds compelling and useful.
 
 ## Inspirations
+- **World of Goo 2 (Chapter 4)** — the *primary* tonal inspiration: corporate-noir aesthetics played for comedy and absurd bureaucracy, not grimdark grittiness.
 - **Date Everything** — route/character-driven structure; daily choices of who to engage; storylines can intertwine.
 - **Papers, Please** — day-based cadence; bureaucratic UI; rules/policy; score + consequences loop.
 - **Shadows of Doubt** — “red string” evidence board; players connect facts to form narratives.
