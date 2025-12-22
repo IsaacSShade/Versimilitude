@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bmvtb5fkjcqx6"]
 
 [ext_resource type="Script" uid="uid://c3dqvu54ow024" path="res://main/screen_manager.gd" id="1_pjrb6"]
-[ext_resource type="PackedScene" uid="uid://dpkqseaeli6o7" path="res://ui/screens/intake/intake_screen.tscn" id="2_xwkvk"]
+[ext_resource type="PackedScene" uid="uid://ccna78w47rb8u" path="res://ui/screens/title_screen/title_screen.tscn" id="2_xwkvk"]
 [ext_resource type="PackedScene" uid="uid://bbhrikn5gobjd" path="res://ui/overlays/evidence_board/evidence_board_overlay.tscn" id="3_xwkvk"]
 
 [node name="Main" type="Control"]

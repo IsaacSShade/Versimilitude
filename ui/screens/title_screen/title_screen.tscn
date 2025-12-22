@@ -1,0 +1,66 @@
+[gd_scene load_steps=5 format=3 uid="uid://ccna78w47rb8u"]
+
+[ext_resource type="Script" uid="uid://cylhvgfuj4blm" path="res://ui/screens/title_screen/title_screen.gd" id="1_j86og"]
+[ext_resource type="PackedScene" uid="uid://dpkqseaeli6o7" path="res://ui/screens/intake/intake_screen.tscn" id="2_2yhc6"]
+[ext_resource type="AudioStream" uid="uid://dwh5hxq3aomoa" path="res://assests/audio/Title.ogg" id="2_kkokw"]
+[ext_resource type="Texture2D" uid="uid://cb5fqrqs70k0a" path="res://assests/art/Title Card.png" id="4_2yhc6"]
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j86og")
+next_screen = ExtResource("2_2yhc6")
+
+[node name="IntroMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_kkokw")
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="Center"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="TitleCard" type="TextureRect" parent="Center/VBox"]
+custom_minimum_size = Vector2(700, 320)
+layout_mode = 2
+texture = ExtResource("4_2yhc6")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Spacer" type="Control" parent="Center/VBox"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+
+[node name="Buttons" type="VBoxContainer" parent="Center/VBox"]
+layout_mode = 2
+
+[node name="StartButton" type="Button" parent="Center/VBox/Buttons"]
+layout_mode = 2
+text = "Start"
+
+[node name="BeatCueTimer" type="Timer" parent="."]
+wait_time = 36.0
+one_shot = true
+
+[node name="Fade" type="ColorRect" parent="."]
+z_index = 100
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[connection signal="pressed" from="Center/VBox/Buttons/StartButton" to="." method="_on_StartButton_pressed"]

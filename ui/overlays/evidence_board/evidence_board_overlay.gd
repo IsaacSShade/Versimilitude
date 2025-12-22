@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 @onready var board_root: Control = $BoardRoot
+@onready var _design_open_y: float = board_root.position.y
 @onready var cards_layer: Control = $BoardRoot/BoardBackground/CardsLayer
 @onready var edges_layer: Node2D = $BoardRoot/BoardBackground/EdgesLayer
 
@@ -12,6 +13,8 @@ extends CanvasLayer
 var _cards: Array[Control] = []
 
 var _is_open := false
+var _toggle_enabled := true
+
 var _tween: Tween
 
 var _open_y := 0.0
@@ -28,7 +31,7 @@ func _ready() -> void:
 
 func _init_positions() -> void:
 	# This is the "resting" position based on anchors/margins.
-	_open_y = board_root.position.y
+	_open_y = _design_open_y
 
 	# Fully hidden above the screen (bottom edge at y=0).
 	_closed_y = -board_root.size.y
@@ -38,9 +41,11 @@ func _init_positions() -> void:
 	board_root.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
 func _unhandled_input(event: InputEvent) -> void:
+	if not _toggle_enabled:
+		return
+
 	if event.is_action_pressed("toggle_board"):
 		toggle()
-		# Mark input as handled so it doesn't leak into underlying UI.
 		get_viewport().set_input_as_handled()
 
 func _snap_to_closed() -> void:
@@ -172,7 +177,21 @@ func _get_pin_global(card: Control) -> Vector2:
 	# fallback: top-center of card
 	var cr: Rect2 = card.get_global_rect()
 	return Vector2(cr.position.x + cr.size.x * 0.5, cr.position.y)
-	
+
+func set_toggle_enabled(enabled: bool) -> void:
+	_toggle_enabled = enabled
+	if not enabled:
+		force_close()
+
+func force_close() -> void:
+	_is_open = false
+
+	if _tween and _tween.is_valid():
+		_tween.kill()
+
+	board_root.position.y = _closed_y
+	board_root.mouse_filter = Control.MOUSE_FILTER_IGNORE
+
 func toggle() -> void:
 	if _is_open:
 		close()

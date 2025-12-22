@@ -16,6 +16,9 @@ func go_to(screen: PackedScene) -> void:
 	# Using our argument, create the node tree scene and put it into the current_screen variable
 	current_screen = screen.instantiate()
 	add_child(current_screen) # Adds the new scene to a child of the Screenmanager UI container
+	
+	get_tree().call_group("evidence_board", "set_toggle_enabled", current_screen.name != "TitleScreen")
+
 
 	# If a screen emits "navigate(next_scene)" this script will listen and call "go_to"
 	if current_screen.has_signal("navigate"):
