@@ -89,26 +89,26 @@ Minimum v0 target:
 ```text
 res://
   autoload/                 # Global singletons (shared state)
-    app_state.gd            # pinned evidence + edges, day/case state
-    evidence_db.gd          # loads case JSON + query helpers
+	app_state.gd            # pinned evidence + edges, day/case state
+	evidence_db.gd          # loads case JSON + query helpers
 
   docs/                     # Design notes / PRD / pitch docs
-    BASIC_PITCH_AND_MVP_PLAN.md
+	BASIC_PITCH_AND_MVP_PLAN.md
 
   main/                     # Bootstrapping + routing + always-loaded overlays
-    main.tscn               # root scene (includes Evidence Board overlay)
-    screen_manager.gd       # swaps PackedScene screens at runtime
+	main.tscn               # root scene (includes Evidence Board overlay)
+	screen_manager.gd       # swaps PackedScene screens at runtime
 
   ui/  
-    screens/                  # “Pages” of the game (each screen is its own scene + script)
-    title/                  # Title screen + intro music + Start menu
-    intake/                 # Intake 
-    interview/
-    outcome/
+	screens/                  # “Pages” of the game (each screen is its own scene + script)
+	title/                  # Title screen + intro music + Start menu
+	intake/                 # Intake 
+	interview/
+	outcome/
 
   data/                     # Authored case data (JSON/Resources)
-    case_001/
-      evidence.json
+	case_001/
+	  evidence.json
 
   assets/                   # Art/audio/etc.
 
