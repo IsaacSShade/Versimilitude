@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bousrswpo388u"
-path="res://.godot/imported/pin-selected.png-e8308a9263137d0d036ef5501d4226b6.ctex"
+path="res://.godot/imported/pin-selected.png-584bcedeb5365455159c2e4b7dbdc4a8.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/art/pin-selected.png"
-dest_files=["res://.godot/imported/pin-selected.png-e8308a9263137d0d036ef5501d4226b6.ctex"]
+dest_files=["res://.godot/imported/pin-selected.png-584bcedeb5365455159c2e4b7dbdc4a8.ctex"]
 
 [params]
 

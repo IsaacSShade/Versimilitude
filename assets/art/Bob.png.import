@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bduhu26ln7pcx"
-path="res://.godot/imported/Bob.png-cc0bebf6d0e1d183898eacc49dac3da9.ctex"
+path="res://.godot/imported/Bob.png-164105382504e89ba2ba76b42e822015.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/art/Bob.png"
-dest_files=["res://.godot/imported/Bob.png-cc0bebf6d0e1d183898eacc49dac3da9.ctex"]
+dest_files=["res://.godot/imported/Bob.png-164105382504e89ba2ba76b42e822015.ctex"]
 
 [params]
 
