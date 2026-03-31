@@ -28,5 +28,4 @@ func _on_evidence_clicked(evidence_id: String) -> void:
 		push_warning("Intake: unknown evidence id: " + evidence_id)
 		return
 
-	AppState.pin_evidence(ev)
 	get_tree().call_group("evidence_board", "spawn_paper", evidence_id)

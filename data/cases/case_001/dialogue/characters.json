@@ -1,0 +1,5 @@
+{
+  "detective": { "name": "Detective", "sprite": "" },
+  "bob":       { "name": "Bob",       "sprite": "res://assets/art/Bob.png" },
+  "vera":      { "name": "VERA",      "sprite": "" }
+}

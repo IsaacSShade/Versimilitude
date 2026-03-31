@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://cylhvgfuj4blm" path="res://ui/screens/title_screen/title_screen.gd" id="1_j86og"]
 [ext_resource type="PackedScene" uid="uid://dpkqseaeli6o7" path="res://ui/screens/intake/intake_screen.tscn" id="2_2yhc6"]
-[ext_resource type="AudioStream" uid="uid://dwh5hxq3aomoa" path="res://assests/audio/Title.ogg" id="2_kkokw"]
-[ext_resource type="Texture2D" uid="uid://cb5fqrqs70k0a" path="res://assests/art/Title Card.png" id="4_2yhc6"]
+[ext_resource type="AudioStream" uid="uid://dwh5hxq3aomoa" path="res://assets/audio/Title.ogg" id="2_kkokw"]
+[ext_resource type="Texture2D" uid="uid://cb5fqrqs70k0a" path="res://assets/art/Title Card.png" id="4_2yhc6"]
 
 [node name="TitleScreen" type="Control"]
 layout_mode = 3

@@ -1,11 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bbhrikn5gobjd"]
+[gd_scene load_steps=4 format=3 uid="uid://bbhrikn5gobjd"]
 
 [ext_resource type="Script" uid="uid://b2nlkaehvoh47" path="res://ui/overlays/evidence_board/evidence_board_overlay.gd" id="1_vqy6b"]
 [ext_resource type="PackedScene" uid="uid://yst4wavdlshi" path="res://ui/overlays/evidence_board/paper_card.tscn" id="2_e8ddg"]
 [ext_resource type="PackedScene" uid="uid://dwtjib68pnwe4" path="res://ui/overlays/evidence_board/edge_line.tscn" id="3_ahysw"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_qxogj"]
-specular_color = Color(0.8972488, 0.7030767, 0.524571, 1)
 
 [node name="EvidenceBoardOverlay" type="CanvasLayer"]
 layer = 10
@@ -22,28 +19,52 @@ anchor_right = 0.95
 anchor_bottom = 0.95
 grow_horizontal = 2
 grow_vertical = 2
+clip_contents = true
 
-[node name="BoardBackground" type="NinePatchRect" parent="BoardRoot"]
+[node name="BoardBackground" type="ColorRect" parent="BoardRoot"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("CanvasTexture_qxogj")
+color = Color(0.761, 0.600, 0.420, 1)
+mouse_filter = 0
 
-[node name="EdgesLayer" type="Node2D" parent="BoardRoot/BoardBackground"]
+[node name="BoardCanvas" type="Control" parent="BoardRoot"]
+layout_mode = 0
+mouse_filter = 2
 
-[node name="CardsLayer" type="Control" parent="BoardRoot/BoardBackground"]
+[node name="EdgesLayer" type="Node2D" parent="BoardRoot/BoardCanvas"]
+
+[node name="CardsLayer" type="Control" parent="BoardRoot/BoardCanvas"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
-[node name="TopBar" type="HBoxContainer" parent="BoardRoot/BoardBackground"]
+[node name="TopBar" type="HBoxContainer" parent="BoardRoot"]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
 grow_horizontal = 2
+
+[node name="ZoomSlider" type="VSlider" parent="BoardRoot"]
+layout_mode = 1
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -46.0
+offset_top = -220.0
+offset_right = -10.0
+offset_bottom = -20.0
+grow_horizontal = 0
+grow_vertical = 0
+min_value = 0.2
+max_value = 3.0
+step = 0.05
+value = 1.0

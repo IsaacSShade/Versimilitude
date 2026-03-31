@@ -45,3 +45,23 @@ func load_case(case_id: String) -> void:
 func get_evidence(evidence_id: String) -> Dictionary:
 	var v: Variant = evidence_by_id.get(evidence_id)
 	return v if v is Dictionary else {}
+
+func make_evidence_entry(evidence: Dictionary) -> Dictionary:
+	if evidence.is_empty():
+		return {}
+
+	var evidence_id := str(evidence.get("id", ""))
+	if evidence_id == "":
+		return {}
+
+	return {
+		"id": "evidence:%s" % evidence_id,
+		"kind": "evidence",
+		"title": str(evidence.get("title", evidence_id)),
+		"body": str(evidence.get("body", "")),
+		"source": str(evidence.get("source", "")),
+		"source_id": evidence_id
+	}
+
+func get_board_entry_for_evidence(evidence_id: String) -> Dictionary:
+	return make_evidence_entry(get_evidence(evidence_id))

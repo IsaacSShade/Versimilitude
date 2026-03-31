@@ -1,10 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://yst4wavdlshi"]
+[gd_scene load_steps=4 format=3 uid="uid://yst4wavdlshi"]
 
 [ext_resource type="Script" uid="uid://nje2r1lbrj62" path="res://ui/overlays/evidence_board/paper_card.gd" id="1_jnqwb"]
+[ext_resource type="Texture2D" uid="uid://dlqixb8mlnyui" path="res://assets/art/pin-unselected.png" id="2_pin_unselected"]
+[ext_resource type="Texture2D" uid="uid://bousrswpo388u" path="res://assets/art/pin-selected.png" id="3_pin_selected"]
 
 [node name="PaperCard" type="Panel"]
 offset_right = 200.0
-offset_bottom = 250.0
+offset_bottom = 96.0
 script = ExtResource("1_jnqwb")
 
 [node name="PinButton" type="TextureButton" parent="."]
@@ -13,9 +15,15 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 40.0
+offset_top = -12.0
+offset_right = 10.0
+offset_bottom = 18.0
 grow_horizontal = 2
+toggle_mode = true
+texture_normal = ExtResource("2_pin_unselected")
+texture_pressed = ExtResource("3_pin_selected")
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="Padding" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -39,3 +47,5 @@ autowrap_mode = 3
 [node name="Body" type="RichTextLabel" parent="Padding/Content"]
 custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
+fit_content = true
+scroll_active = false

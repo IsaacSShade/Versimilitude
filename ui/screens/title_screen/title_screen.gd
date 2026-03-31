@@ -43,8 +43,8 @@ func _on_StartButton_pressed() -> void:
 
 	# Fade out + kill audio
 	var t := create_tween()
-	t.parallel().tween_property(fade, "color:a", 1.0, 3)
-	t.parallel().tween_property(music, "volume_db", -80.0, 3)
+	t.parallel().tween_property(fade, "color:a", 1.0, 2)
+	t.parallel().tween_property(music, "volume_db", -80.0, 2)
 	await t.finished
 
 	navigate.emit(next_screen)

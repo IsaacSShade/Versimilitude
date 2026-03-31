@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cb5fqrqs70k0a"
-path="res://.godot/imported/Title Card.png-f2831fdc2db7ff49b3a0e5b4be779e09.ctex"
+uid="uid://bousrswpo388u"
+path="res://.godot/imported/pin-selected.png-e8308a9263137d0d036ef5501d4226b6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assests/art/Title Card.png"
-dest_files=["res://.godot/imported/Title Card.png-f2831fdc2db7ff49b3a0e5b4be779e09.ctex"]
+source_file="res://assets/art/pin-selected.png"
+dest_files=["res://.godot/imported/pin-selected.png-e8308a9263137d0d036ef5501d4226b6.ctex"]
 
 [params]
 
